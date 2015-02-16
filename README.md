@@ -19,18 +19,18 @@ The purpose of this mini-project is to gather Bahá'í quotes for any developmen
 Some principles of this project are:
 
 * **Low developer barrier-to-entry**.  It should be easy for *anyone* to add quotes to the project, for example.
-* **Minimal Dependencies**.  We really want this to be easy to use folks!
+* **Minimal Dependencies**.  For now, the only language is Ruby.
 * **Incremental growth**.  This project is very small at the moment.  It will grow only as there is need to do so.
 * **Common quote format**.  To reduce redundancy, all the quotes in the "database" should be in the same format.
 
 ## Codebase
 
-* The main quotes "database" is the /quotes/quotes.json.  This is the file to update!!
+* The main quotes "database" is /source.json.  *This is the file to update!!*
 * Quotes in different formats (yaml, xml, etc.) will also go in /quotes, and these will be generated automaticaly.
 * Each library gets its own folder in /lib.  Each library should have its own README.md file in its folder with all the details on how to use it.
 * Anything common to all the libraries will go in /shared.
 
-There's a script, /shared/generate.py, which takes the quotes.json file and translates it into the several available formats.  It also does sanity checking and sorting on the quotes.json file.  It should always be run as a post-commit hook when committing so that the best-available quotes files are in the repository at all times.
+There's a script, /shared/generate.py, which takes the shared.json file and translates it into the several available formats.  It also does sanity checking and sorting on the quotes.json file.  It should always be run as a post-commit hook when committing so that the best-available quotes files are in the repository at all times.
 
 ## Ideas for the future
 
