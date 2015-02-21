@@ -1,5 +1,5 @@
 # bahai-quotes
-A selection of Bahá'í quotes that can be integrated into any kind of software project.
+A selection of Bahá'í quotes that can be integrated into any kind of software project.  The intent is to provide downloadable quotes in a small variety of formats (text, json, yaml, xml, etc.) along with some scripts for doing sanity checks and conversions.
 
 ## Current State
 
@@ -34,6 +34,6 @@ There's a script, /shared/generate.py, which takes the shared.json file and tran
 
 ## Ideas for the future
 
-* AUtomatically slurp the quotes from the official website?
+* Automatically slurp the quotes from the official website?
 * Create a web-based API to serve these quotes to other applications?
 * (Your idea here)
