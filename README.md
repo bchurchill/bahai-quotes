@@ -3,7 +3,7 @@ A selection of Bahá'í quotes that can be integrated into any kind of software 
 
 ## Current State
 
-***The initial bootstraping of this is work-in-progress.***  Right now I have a collection of quotes for use by the UNIX fortune program.  By April 2015 I hope to have a minimal framework that others can expand on if they have any desire.  If you're reading this after April 2015, I haven't met my goal and you should consider this project defunct.
+***The initial bootstraping of this is work-in-progress.***  Right now I have a collection of quotes for use by the UNIX fortune program.  By August 2015 I hope to have a minimal framework that others can expand on if they have any desire.  If you're reading this after August 2015, I haven't met my goal and you should consider this project defunct.
 
 ## Purpose
 
