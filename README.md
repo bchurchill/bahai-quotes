@@ -3,7 +3,7 @@ A selection of Bahá'í quotes that can be integrated into any kind of software 
 
 ## Current State
 
-***The initial bootstraping of this is work-in-progress.***  Right now I have a collection of quotes for use by the UNIX fortune program.  By August 2015 I hope to have a minimal framework that others can expand on if they have any desire.  If you're reading this after August 2015, I haven't met my goal and you should consider this project defunct.
+We've got a bunch of quotes!  Adib has graciously facilitated scraping all of bahaiquotes.com, and Lights of Guidance is coming soon.
 
 ## Purpose
 
@@ -11,7 +11,7 @@ The purpose of this mini-project is to gather Bahá'í quotes for any developmen
 
 * **To provide the quotes!**  The most basic purpose is to aggregate quotes to be easily consumed by software.
 * **Avoid duplicating effort**.  Our time is limitted, so let's work together!
-* **Usability**.  It should be easy for anyone to use these in their software project, small or large.
+* **Simplicity and Usability**.  It should be easy for anyone to use these in their software project, small or large.
 * **Authenticity**.  We want to be sure the quotes match exactly the Bahá'í writings, down to the punctuation.  The official source is http://www.bahai.org/library/.
 
 ## Design
@@ -25,12 +25,11 @@ Some principles of this project are:
 
 ## Codebase
 
-* The main quotes "database" is /source.json.  *This is the file to update!!*
+* The "database" of quotes are .json files in the /sources/ folder.  If you want to contribute, add a file here!
 * Quotes in different formats (yaml, xml, etc.) will also go in /quotes, and these will be generated automaticaly.
-* Each library gets its own folder in /lib.  Each library should have its own README.md file in its folder with all the details on how to use it.
-* Anything common to all the libraries will go in /shared.
+* Libraries to manipulate the quotes or write them to different formats will go in /lib.
 
-There's a script, /shared/generate.py, which takes the shared.json file and translates it into the several available formats.  It also does sanity checking and sorting on the quotes.json file.  It should always be run as a post-commit hook when committing so that the best-available quotes files are in the repository at all times.
+There's a script, /lib/generate.rb, which takes the JSON files in /sources and translates them into the available formats.  In the future it will also do sanity checking and sorting on the quotes.json file.  
 
 ## Ideas for the future
 
