@@ -4,6 +4,7 @@
 ## and generates output in other formats.
 
 require 'json'
+require 'yaml'
 
 # This class represents a single quotation.
 class Quote
@@ -110,6 +111,9 @@ def main
   
   puts "Writing file ../quotes/all.json"
   write_json_quotes("../quotes/all.json", hashes)
+
+  puts "Writing file ../quotes/all.yaml"
+  File.write("../quotes/all.yaml", YAML.dump(hashes))
 end
 
 main
