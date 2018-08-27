@@ -105,9 +105,72 @@ def write_json_quotes(filename, quotes)
   File.write(filename, JSON.generate(quotes, opts))
 end
 
+def quote_filter(quote)
+
+  if quote[:quote].length < 3
+    return false
+  end
+
+# The intent is to focus on quotes that are uplifting and for
+# a family audience, so for now we're filtering out quotes related 
+# to administration, sexuality, abuse, and several other topics
+
+  blacklisted_tags = [
+    "abortion",
+    "addiction",
+    "adultery",
+    "artificial insemination",
+    "bi-elections",
+    "birth control",
+    "drugs",
+    "pregnancy",
+  ]
+  
+  blacklisted_tag_phrases = [
+    "abuse",
+    "administrative rights",
+    "assemblies",
+    "assembly",
+    "chastity",
+    "consent",
+    "covenant breakers",
+    "divorce",
+    "lsa",
+    "withdrawl",
+    "sex"
+  ]
+
+  tags = quote[:tags]
+  tags.each do |tag|
+    if blacklisted_tags.include?(tag)
+      return false
+    end
+
+    blacklisted_tag_phrases.each do |phrase|
+      if tag.include?(phrase)
+        return false
+      end
+    end
+  end
+
+  # filter out messages from NSAs, but not messages from UHJ to NSAs
+  author = quote[:author].downcase
+  if author.include?("assembly") and not author.include?("universal")
+    return false
+  end
+
+  source = quote[:source].downcase
+  if source.include?("guidelines")
+    return false
+  end
+
+  return true
+end
+
 def main
   quotes = read_json_folder("../sources")
   hashes = quotes.map { |quote| quote.to_hash }
+  hashes = hashes.select { |quote| quote_filter(quote) }
   
   puts "Writing file ../quotes/all.json"
   write_json_quotes("../quotes/all.json", hashes)
